@@ -1,0 +1,14 @@
+{
+  "author": "",
+  "name": "banicci",
+  "version": "1.0.0",
+  "dependencies": {
+    "grunt": "*",
+    "grunt-contrib": "*",
+    "grunt-contrib-imagemin": "*",
+    "grunt-smushit": "*"
+  },
+  "devDependencies": {
+    "grunt-contrib-imagemin": "~0.1.0"
+  }
+}
