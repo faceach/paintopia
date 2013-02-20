@@ -1,6 +1,21 @@
+@font-face{
+    font-family: futurabt;
+    src: url(futurabt-mediumcondensed.otf);
+    font-weight: 400;
+}
 html
 {
 	background: url(../images/bg_page.png);
+	font: 75%/1.5 arial, sans-serif;
+}
+a
+{
+	text-decoration: none;
+}
+.page-width
+{
+	width: 950px;
+	margin: 0 auto;
 }
 
 /* + Header */
@@ -8,12 +23,11 @@ html
 {
 	background: url(../images/bg_header.png) left top repeat-x;
 	box-shadow: 0 2px 13px rgba(0, 0, 0, .09);
-
+	min-height: 65px;
 }
-.page-width
+.page-header nav
 {
-	width: 950px;
-	margin: 0 auto;
+	font-family: futurabt;
 }
 
 /* + Main */
