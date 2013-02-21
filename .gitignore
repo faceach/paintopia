@@ -28,7 +28,7 @@
 
 # OS generated files #
 ######################
-node_modules/
+assets/
 .project
 .settings
 .DS_Store
