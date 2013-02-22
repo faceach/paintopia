@@ -1,0 +1,193 @@
+/* - stage */
+.stage
+{
+	max-width: 950px;
+	height: 392px;
+	border: 3px solid #fff;
+	background: url(../images/banner.png) left -3px no-repeat;
+}
+.stage > p
+{
+	color: #291b1a;
+	font-size: 45px;
+	line-height: 1em;
+	width: 40%;
+	margin: 125px 0 0 65px;
+}
+.stage > a
+{
+	background-color: #bb4373;
+	border-radius: 8px;
+	color: #fff;
+	font-size: 23px;
+	line-height: 44px;
+	padding: 0 15px;
+	display: inline-block;
+	margin: 36px 0 0 65px;
+}
+/* - wood */
+.wood-t
+{
+	left: 50%;
+	top: -7px;
+}
+.wood-t > div
+{
+	width: 255px;
+	height: 33px;
+	margin-left: -50%;
+	background: url(../images/wood_t.png) left top no-repeat;		
+}
+.wood-b
+{
+	left: 50%;
+	bottom: -42px;
+}
+.wood-b > div
+{
+	width: 1034px;
+	height: 42px;
+	margin-left: -50%;
+	background: url(../images/wood_b.png) left top no-repeat;	
+}
+/* + Home */
+.page-main-content
+{
+	padding: 0 25px;
+}
+.page-main-content .col-w
+{
+	width: 66%;
+}
+.page-main-content .col-n
+{
+	width: 29.5%;
+	margin-left: 40px;
+}
+.page-main-content .title
+{
+	color: #bb4373;
+}
+/* - panel */
+.page-main-panel li
+{
+	width: 182px;
+	padding: 113px 0 20px;
+	border: 1px dashed #c0c0c0;
+	border-radius: 8px;
+	margin-left: 21px;
+	background-color: #fff;
+	background-repeat: no-repeat;
+	background-position: left top;
+	text-align: center;
+	min-height: 161px;
+	position: relative;
+}
+.page-main-panel .panel-shadow
+{
+	position: absolute;
+	width: 206px;
+	height: 13px;
+	z-index: -1;
+	bottom: -9px;
+	left: -11px;
+	background: url(../images/shadow_panel.png) center 0 no-repeat;
+}
+.page-main-panel li.panel-member
+{
+	margin-left: 0;
+	background-image: url(../images/panel_member.png);
+}
+.page-main-panel li.panel-ideas
+{
+	background-image: url(../images/panel_ideas.png);
+}
+.page-main-panel li.panel-event
+{
+	background-image: url(../images/panel_event.png);
+}
+.page-main-panel li > p
+{
+	color: #4e3440;
+	font-size: 106%;
+	padding: 0 15px;
+}
+/* - Sponsorer */
+.sponsorer .title
+{
+	color: #a0a29e;
+}
+.sponsorer > div
+{
+	height: 118px;
+	background: url(../images/sponsorers.png) center top no-repeat;
+}
+/* - Events */
+.page-main-events ul li
+{
+	margin-top: 10px;
+}
+.page-main-events ul li > p
+{
+	color: #4e3440;
+	font-weight: bold;
+	font-size: 106%;
+}
+/* - facebook */
+.facebook-name
+{
+	color: #355696;
+}
+.facebook-like > a
+{
+	display: inline-block;
+	line-height: 0;
+}
+.facebook-like button
+{
+	border: 1px solid #d8d8d8;
+	color: #a5a5a5;
+	line-height: 20px;
+	padding: 0 8px 0 24px;
+	margin: 0;
+	border-radius: 3px;
+	cursor: pointer;
+	background: #e9e9e9 url(../images/icon_like.png) 8px center no-repeat;
+}
+.facebook-follower
+{
+	border-top: 1px solid #d3dae5;
+}
+.facebook-follower ul > li
+{
+	margin: 0 3px 3px 0;
+}
+.facebook-follower ul > li > a
+{
+	display: block;
+	line-height: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
