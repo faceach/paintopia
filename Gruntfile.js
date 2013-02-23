@@ -19,7 +19,6 @@ module.exports = function( grunt ) {
       dist:{
         files: [
           {expand: true, flatten: true, src: ['app/*.html', "app/favicon.ico", "app/favicon.png"], dest: 'dist/', filter: 'isFile'},
-          {expand: true, flatten: true, src: ['app/contactform/*'], dest: 'dist/contactform/', filter: 'isFile'},
           {expand: true, flatten: true, src: ['app/contact/*'], dest: 'dist/contact/', filter: 'isFile'},
           {expand: true, flatten: true, src: ['app/contact/include/*'], dest: 'dist/contact/include/', filter: 'isFile'},
           {expand: true, flatten: true, src: ['app/contact/scripts/*'], dest: 'dist/contact/scripts/', filter: 'isFile'},
