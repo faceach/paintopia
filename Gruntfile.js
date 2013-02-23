@@ -40,6 +40,10 @@ module.exports = function( grunt ) {
             "app/scripts/fancybox/source/jquery.fancybox.css",
             "app/styles/main.css",
             "app/styles/home.css",
+            "app/styles/about.css",
+            "app/styles/events.css",
+            "app/styles/gallery.css",
+            "app/styles/merchandise.css",
             "app/styles/contact.css"
           ]
         }

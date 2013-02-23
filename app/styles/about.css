@@ -1,0 +1,78 @@
+.founder
+{
+	padding: 0 50px;
+}
+.pic-founder
+{
+	line-height: 0;
+	border: 1px dashed #c0c0c0;
+	border-radius: 8px;
+	position: relative;
+}
+.pic-founder > img
+{
+	border-radius: 8px;
+}
+.pic-founder .pic-founder-shadow
+{
+	position: absolute;
+	width: 326px;
+	height: 13px;
+	z-index: -1;
+	bottom: -11px;
+	left: -23px;
+	background: url(../images/shadow_founder.png) center 0 no-repeat;
+}
+.founder > div:last-child
+{
+	width: 60%;
+}
+.founder-intro
+{
+	font-size: 15px;
+	line-height: 1.8em;
+}
+/* - mission */
+.mission
+{
+	padding: 0 90px 0 136px;
+}
+.mission ul > li
+{
+	position: relative;
+	border-left: 2px solid #575757;
+	padding-left: 85px;
+	padding-bottom: 70px;
+}
+.mission ul > li:last-child
+{
+	border-left-width: 0;
+}
+.mission ul > li > strong
+{
+	width: 100px;
+	border-radius: 50px;
+	background-color: #575757;
+	color: #fff;
+	text-align: center;
+	line-height: 100px;
+	display: inline-block;
+	font-weight: lighter;
+	position: absolute;
+	top: -35px;
+	left: -50px;
+}
+.mission ul > li > p
+{
+	line-height: 1.8em;
+	font-size: 15px;
+	margin-top: 5px;
+}
+
+
+
+
+
+
+
+
