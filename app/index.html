@@ -7,14 +7,8 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         
-        <link rel="stylesheet" type="text/css" href="styles/reset.css">
-        <link rel="stylesheet" type="text/css" href="styles/base.css">
-        <link rel="stylesheet" type="text/css" href="styles/main.css">
-        <link rel="stylesheet" type="text/css" href="styles/home.css">
-        <!-- Add fancyBox main CSS file -->
-        <link rel="stylesheet" type="text/css" href="scripts/fancybox/source/jquery.fancybox.css?v=2.1.2" media="screen" />
+        <link rel="stylesheet" type="text/css" href="styles/main.min.css">
 
-        <script src="scripts/vendor/modernizr.min.js"></script>
         <!--[if lt IE 9]> 
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
@@ -248,33 +242,7 @@
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script-->
     
-        <!-- build:js scripts/amd-app.js -->
-        <script src="scripts/vendor/require.js"></script>
-        <script type="text/javascript">
-            'use strict';
-            
-            var appRequire = require.config({
-                paths: {
-                    "jquery": 'scripts/vendor/jquery-1.8.3.min',
-                    "jquery-ui": 'scripts/vendor/jquery-ui-1.10.0.custom.min',
-                    "fancybox": "scripts/fancybox/source/jquery.fancybox"
-                },
-                shim: {
-                    'fancybox': {
-                        deps: ['jquery']
-                    },
-                    'jquery-ui': {
-                        deps: ['jquery']
-                    }
-                }
-            });
-            appRequire(['require', 'scripts/app'], function(parentRequire, app) {
-                $(document).ready(function() {
-                    app.init();
-                });
-            });
-        </script>
-        <!-- endbuild -->
+        <script src="scripts/vendor/require.js" data-main="scripts/main"></script>
 
     </body>
 </html>
