@@ -54,6 +54,16 @@ a
 .link-arrow-r:hover > span
 {
 }
+.btn-fuchsia
+{
+	background-color: #bb4373;
+	border-radius: 8px;
+	color: #fff;
+	font-size: 23px;
+	line-height: 44px;
+	padding: 0 15px;
+	display: inline-block;
+}
 .sign
 {
 	color: #8e8e8e;
