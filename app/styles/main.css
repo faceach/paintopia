@@ -34,6 +34,10 @@ a
 	font-size: 25px;
 	color: #1e1e1e;
 }
+.jp .title
+{
+	font-size: 23px;
+}
 .btn-fuchsia
 {
 	font-family: futurabt;
@@ -45,12 +49,30 @@ a
 	padding: 0 15px;
 	display: inline-block;
 }
+.jp .btn-fuchsia
+{
+	font-size: 20px;
+}
+.link
+{
+	font-size: 13px;
+	color: #1179b4;
+	display: inline-block;
+}
+.jp .link
+{
+	font-size: 12px;
+}
 .link-arrow-r
 {
 	font-size: 13px;
 	color: #1179b4;
 	font-weight: bold;
 	display: inline-block;
+}
+.jp .link-arrow-r
+{
+	font-size: 12px;
 }
 .link-arrow-r > span
 {
@@ -103,7 +125,7 @@ a
 /* - Logo */
 .page-header h1
 {
-	margin: 12px 0 0 10px;
+	margin: 19px 0 0 5px;
 }
 .page-header h1 a
 {
@@ -113,7 +135,7 @@ a
 /* - Nav */
 .page-header nav
 {
-	margin: 20px 0 0 50px;
+	margin: 20px 0 0 40px;
 }
 .page-header nav li
 {
@@ -130,6 +152,10 @@ a
 	font-size: 18px;
 	line-height: 25px;
 	padding: 0 15px;
+}
+.jp .page-header nav a
+{
+	font-size: 9px;
 }
 .page-header nav li.active a,
 .page-header nav li a:hover
@@ -202,6 +228,10 @@ a
 	padding: 0 10px;
 	border-right: 1px solid #fff;
 }
+.jp .link-help li a
+{
+	font-size: 12px;
+}
 .link-help li a:hover
 {
 	text-shadow: 0 1px 1px #333;
@@ -222,6 +252,10 @@ a
 	line-height: 1em;
 	font-size: 13px;
 	margin: 18px 20px 0 0;
+}
+.jp .copyright
+{
+	font-size: 12px;
 }
 
 /* + Main */

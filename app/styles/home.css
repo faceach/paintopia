@@ -14,6 +14,11 @@
 	width: 40%;
 	margin: 125px 0 0 65px;
 }
+.jp .stage > p
+{
+	font-size: 28px;
+	line-height: 1.3em;
+}
 .stage > a
 {
 	margin: 36px 0 0 65px;
@@ -62,6 +67,10 @@
 	font-size: 21px;
 	color: #bb4373;
 }
+.jp .page-main-content .title
+{
+	font-size: 16px;
+}
 /* - panel */
 .page-main-panel li
 {
@@ -74,7 +83,7 @@
 	background-repeat: no-repeat;
 	background-position: left top;
 	text-align: center;
-	min-height: 161px;
+	min-height: 200px;
 	position: relative;
 }
 .page-main-panel .panel-shadow
