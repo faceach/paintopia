@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Paintopia</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        
+        <link rel="stylesheet" type="text/css" href="styles/reset.css">
+        <link rel="stylesheet" type="text/css" href="styles/base.css">
+        <link rel="stylesheet" type="text/css" href="styles/main.css">
+        <link rel="stylesheet" type="text/css" href="styles/home.css">
+        <!-- Add fancyBox main CSS file -->
+        <link rel="stylesheet" type="text/css" href="scripts/fancybox/source/jquery.fancybox.css?v=2.1.2" media="screen" />
+
+        <script src="scripts/vendor/modernizr.min.js"></script>
+        <!--[if lt IE 9]> 
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+        <!-- Favicon for bookmark -->
+        <link rel="shortcut icon" href="favicon.ico"  type="image/x-icon" />
+        <link rel="Bookmark" href="favicon.ico" />
+        <!-- Add to home screen icon for iOS -->
+        <link rel="apple-touch-icon" href="favicon.png" />
+
+    </head>
+    <body>
+        <header class="page-header">
+            <div class="page-width cf">
+                <h1 class="col-l">
+                    <a href="index.html" title="paintopia">
+                        <img src="images/logo.png" width="161" height="41">
+                    </a>
+                </h1>
+                <nav class="col-l futura">
+                    <ul class="hor">
+                        <li>
+                            <a href="index.html">HOME</a>
+                        </li>
+                        <li>
+                            <a href="about.html">ABOUT</a>
+                        </li>
+                        <li class="active">
+                            <a href="events.html">EVENTS</a>
+                        </li>
+                        <li>
+                            <a href="gallery.html">GALLERY</a>
+                        </li>
+                        <li>
+                            <a href="merchandise.html">MERCHANDISE</a>
+                        </li>
+                        <li>
+                            <a href="contact.html">CONTACT US</a>
+                        </li>
+                    </ul>
+                </nav>
+                <ul class="lng-selecter hor col-r">
+                    <li class="active">
+                        <a href="#">English</a>
+                    </li>
+                    <li>
+                        <a href="#">中文</a>
+                    </li>
+                    <li>
+                        <a href="#">日本語</a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+        <div class="page-main">
+            <div class="page-width cf">
+                <div class="cf mt-40 page-main-content">
+                    <h2 class="title txtalign-c"><span class="gra">COMING SOON</span></h2>
+                </div>
+            </div>
+        </div>
+        <footer class="page-footer pos-rel">
+            <div class="page-width cf">
+                <ul class="link-help hor col-l">
+                    <li>
+                        <a href="about.html">About us</a>
+                    </li>
+                    <li>
+                        <a href="contact.html">Contact us</a>
+                    </li>
+                </ul>
+                <p class="col-r copyright">
+                    <strong>&copy;2013 Paintopia.</strong>
+                    <span class="ml-3">ICP #12345678.</span>
+                </p>
+            </div>
+            <div class="pos-abs shadow-main"></div>
+        </footer>
+
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <!--script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script-->
+    
+        <!-- build:js scripts/amd-app.js -->
+        <script src="scripts/vendor/require.js"></script>
+        <script type="text/javascript">
+            'use strict';
+            
+            var appRequire = require.config({
+                paths: {
+                    "jquery": 'scripts/vendor/jquery-1.8.3.min',
+                    "jquery-ui": 'scripts/vendor/jquery-ui-1.10.0.custom.min',
+                    "fancybox": "scripts/fancybox/source/jquery.fancybox"
+                },
+                shim: {
+                    'fancybox': {
+                        deps: ['jquery']
+                    },
+                    'jquery-ui': {
+                        deps: ['jquery']
+                    }
+                }
+            });
+            appRequire(['require', 'scripts/app'], function(parentRequire, app) {
+                $(document).ready(function() {
+                    app.init();
+                });
+            });
+        </script>
+        <!-- endbuild -->
+
+    </body>
+</html>

@@ -1,12 +1,9 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>paintopia</title>
+        <title>Paintopia</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         
@@ -33,41 +30,41 @@
         <header class="page-header">
             <div class="page-width cf">
                 <h1 class="col-l">
-                    <a href="#" title="paintopia">
+                    <a href="index.html" title="paintopia">
                         <img src="images/logo.png" width="161" height="41">
                     </a>
                 </h1>
                 <nav class="col-l futura">
                     <ul class="hor">
                         <li class="active">
-                            <a href="">HOME</a>
+                            <a href="index.html">HOME</a>
                         </li>
                         <li>
-                            <a href="">ABOUT</a>
+                            <a href="about.html">ABOUT</a>
                         </li>
                         <li>
-                            <a href="">EVENTS</a>
+                            <a href="events.html">EVENTS</a>
                         </li>
                         <li>
-                            <a href="">GALLERY</a>
+                            <a href="gallery.html">GALLERY</a>
                         </li>
                         <li>
-                            <a href="">MERCHANBDISE</a>
+                            <a href="merchandise.html">MERCHANDISE</a>
                         </li>
                         <li>
-                            <a href="">CONTACT US</a>
+                            <a href="contact.html">CONTACT US</a>
                         </li>
                     </ul>
                 </nav>
                 <ul class="lng-selecter hor col-r">
                     <li class="active">
-                        <a href="">English</a>
+                        <a href="#">English</a>
                     </li>
                     <li>
-                        <a href="">中文</a>
+                        <a href="#">中文</a>
                     </li>
                     <li>
-                        <a href="">日本語</a>
+                        <a href="#">日本語</a>
                     </li>
                 </ul>
             </div>
@@ -76,7 +73,7 @@
             <div class="page-width cf">
                 <div class="stage pos-rel mt-30">
                     <p class="futura">Use traditional painting to connect, to share and to give</p>
-                    <a class="futura" href="#">Read more about our events</a>
+                    <a class="futura" href="events.html">Read more about our events</a>
                     <div class="wood-t pos-abs">
                         <div></div>
                     </div>
@@ -89,19 +86,19 @@
                         <ul class="page-main-panel hor">
                             <li class="panel-member">
                                 <h2 class="title mt-20">BECOME A MEMBER</h2>
-                                <a href="#" class="link-arrow-r">About us<span></span></a>
+                                <a href="about.html" class="link-arrow-r">About us<span></span></a>
                                 <p class="mt-15">As a Paintopia member you get invited to our various events. Membership is free.</p>
                                 <div class="panel-shadow"></div>
                             </li>
                             <li class="panel-ideas">
                                 <h2 class="title mt-20">TEAM BUILDING IDEAS</h2>
-                                <a href="#" class="link-arrow-r">See our events<span></span></a>
+                                <a href="events.html" class="link-arrow-r">See our events<span></span></a>
                                 <p class="mt-15">A Paintopia event is a popular team building activity for companies.</p>
                                 <div class="panel-shadow"></div>
                             </li>
                             <li class="panel-event">
                                 <h2 class="title mt-20">HOST AN EVENT</h2>
-                                <a href="#" class="link-arrow-r">Contact us<span></span></a>
+                                <a href="contact.html" class="link-arrow-r">Contact us<span></span></a>
                                 <p class="mt-15">Get exposure and guests to your venue by hosting an incredible Paintopia event.</p>
                                 <div class="panel-shadow"></div>
                             </li>
@@ -113,7 +110,7 @@
                     </div>
                     <div class="col-l col-n">
                         <div class="page-main-events">
-                            <a href="#" class="link-arrow-r col-r mt-5">See all<span></span></a>
+                            <a href="events.html" class="link-arrow-r col-r mt-5">See all<span></span></a>
                             <h2 class="title">UPCOMING EVENTS</h2>
                             <ul class="mt-20">
                                 <li>
@@ -223,10 +220,10 @@
             <div class="page-width cf">
                 <ul class="link-help hor col-l">
                     <li>
-                        <a href="">About us</a>
+                        <a href="about.html">About us</a>
                     </li>
                     <li>
-                        <a href="">Contact us</a>
+                        <a href="contact.html">Contact us</a>
                     </li>
                 </ul>
                 <p class="col-r copyright">
@@ -254,6 +251,8 @@
         <!-- build:js scripts/amd-app.js -->
         <script src="scripts/vendor/require.js"></script>
         <script type="text/javascript">
+            'use strict';
+            
             var appRequire = require.config({
                 paths: {
                     "jquery": 'scripts/vendor/jquery-1.8.3.min',
@@ -270,7 +269,6 @@
                 }
             });
             appRequire(['require', 'scripts/app'], function(parentRequire, app) {
-                'use strict';
                 $(document).ready(function() {
                     app.init();
                 });
