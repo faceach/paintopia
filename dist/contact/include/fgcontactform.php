@@ -545,7 +545,7 @@ class FGContactForm
     }
     function validate_email($email)
     {
-        return eregi("^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$", $email);
+        return preg_match("^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$", $email);
     }
 
     function GetKey()
