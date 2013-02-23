@@ -383,12 +383,6 @@ class FGContactForm
             $this->add_error("Email address is too big!");
             $ret = false;
         }
-        else
-        if(!$this->validate_email($_POST['email']))
-        {
-            $this->add_error("Please provide a valid email address");
-            $ret = false;
-        }
 
         //message validaions
         if(strlen($_POST['message'])>2048)
@@ -542,10 +536,6 @@ class FGContactForm
     function add_error($error)
     {
         array_push($this->errors,$error);
-    }
-    function validate_email($email)
-    {
-        return preg_match("^[_\.0-9a-zA-Z-]+@([0-9a-zA-Z][0-9a-zA-Z-]+\.)+[a-zA-Z]{2,6}$", $email);
     }
 
     function GetKey()
