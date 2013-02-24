@@ -8,6 +8,7 @@ html
 	background: url(../images/bg_page.png);
 	font: 75%/1.5 "Lucida Grande", arial, sans-serif;
 	color: #4e3440;
+	min-width: 1034px;
 }
 body
 {
@@ -21,6 +22,10 @@ a
 {
 	width: 950px;
 	margin: 0 auto;
+	padding: 0 42px;
+}
+@media screen and (max-width: 800px) {
+
 }
 
 /* + Common Style */
@@ -261,7 +266,6 @@ a
 /* + Main */
 .page-main
 {
-	overflow-x: hidden;
 	min-height: 500px;
 }
 .page-main > div

@@ -26,26 +26,24 @@
 /* - wood */
 .wood-t
 {
-	left: 50%;
+	left: 347px;
 	top: -7px;
 }
 .wood-t > div
 {
 	width: 255px;
 	height: 33px;
-	margin-left: -50%;
 	background: url(../images/wood_t.png) left top no-repeat;		
 }
 .wood-b
 {
-	left: 50%;
+	left: -42px;
 	bottom: -42px;
 }
 .wood-b > div
 {
 	width: 1034px;
 	height: 42px;
-	margin-left: -50%;
 	background: url(../images/wood_b.png) left top no-repeat;	
 }
 /* + Home */
