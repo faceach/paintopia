@@ -7,66 +7,59 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, maximum-scale=1">
         
-        <link rel="stylesheet" type="text/css" href="../styles/main.min.css">
+        <link rel="stylesheet" type="text/css" href="styles/main.min.css">
 
         <!--[if lt IE 9]> 
             <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
         <![endif]-->
 
         <!-- Favicon for bookmark -->
-        <link rel="shortcut icon" href="../favicon.ico"  type="image/x-icon" />
-        <link rel="Bookmark" href="../favicon.ico" />
+        <link rel="shortcut icon" href="favicon.ico"  type="image/x-icon" />
+        <link rel="Bookmark" href="favicon.ico" />
         <!-- Add to home screen icon for iOS -->
-        <link rel="apple-touch-icon" href="../favicon.png" />
+        <link rel="apple-touch-icon" href="favicon.png" />
 
     </head>
-    <body class="jp">
+    <body>
         <header class="page-header">
             <div class="page-width cf">
                 <h1 class="col-l">
                     <a href="index.html" title="paintopia">
-                        <img src="../images/logo.png" width="180" height="27" alt="Paintopia">
+                        <img src="images/logo.png" width="180" height="27" alt="Paintopia">
                     </a>
                 </h1>
                 <nav class="col-l futura">
                     <ul class="hor">
                         <li>
-                            <a href="index.html">ホーム</a>
+                            <a href="index.html" data-blurb="0001">HOME</a>
                         </li>
                         <li>
-                            <a href="about.html">ペイントピアについて</a>
+                            <a href="about.html" data-blurb="0002">ABOUT</a>
                         </li>
                         <li>
-                            <a href="events.html">イベント</a>
+                            <a href="events.html" data-blurb="0003">EVENTS</a>
                         </li>
                         <li>
-                            <a href="gallery.html">ギャラリー</a>
+                            <a href="gallery.html" data-blurb="0004">GALLERY</a>
+                        </li>
+                        <li>
+                            <a href="merchandise.html" data-blurb="0005">MERCHANDISE</a>
                         </li>
                         <li class="active">
-                            <a href="merchandise.html">ペイントピアグッズ</a>
-                        </li>
-                        <li>
-                            <a href="contact.html">お問い合せ</a>
+                            <a href="contact.html" data-blurb="0006">CONTACT US</a>
                         </li>
                     </ul>
                 </nav>
-                <ul class="lng-selecter hor col-r">
-                    <li>
-                        <a href="../en/merchandise.html">English</a>
-                    </li>
-                    <li>
-                        <a href="../cn/merchandise.html">中文</a>
-                    </li>
-                    <li class="active">
-                        <a href="../jp/merchandise.html">日本語</a>
-                    </li>
-                </ul>
+                <div id="hook-language" class="col-r"></div>
             </div>
         </header>
         <div class="page-main">
             <div class="page-width cf">
                 <div class="cf mt-40 page-main-content">
-                    <h2 class="title txtalign-c"><span class="gra">COMING SOON</span></h2>
+                    <div class="align-c contact-form">
+                        <h2 class="title" data-blurb="0006">CONTACT US</h2>
+                        <iframe class="mt-20" src='contact/contactform.php' frameborder='0' width='100%' height='400' ></iframe>
+                    </div>
                 </div>
             </div>
         </div>
@@ -74,15 +67,15 @@
             <div class="page-width cf">
                 <ul class="link-help hor col-l">
                     <li>
-                        <a href="about.html">ペイントピアについて</a>
+                        <a href="about.html" data-blurb="0002">About us</a>
                     </li>
                     <li>
-                        <a href="contact.html">お問い合せ</a>
+                        <a href="contact.html" data-blurb="0006">Contact us</a>
                     </li>
                 </ul>
                 <p class="col-r copyright">
                     <strong>&copy;2013 Paintopia.</strong>
-                    <span class="ml-3">ICP #12345678.</span>
+                    <span class="ml-3">&nbsp;</span>
                 </p>
             </div>
             <div class="pos-abs shadow-main"></div>
@@ -102,7 +95,7 @@
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script-->
     
-        <script src="../scripts/vendor/require.js" data-main="../scripts/main"></script>
+        <script src="scripts/vendor/require.js" data-main="scripts/main"></script>
 
     </body>
 </html>

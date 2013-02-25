@@ -39,6 +39,7 @@ a
 	font-size: 25px;
 	color: #1e1e1e;
 }
+.cn .title,
 .jp .title
 {
 	font-size: 23px;
@@ -54,6 +55,7 @@ a
 	padding: 0 15px;
 	display: inline-block;
 }
+.cn .btn-fuchsia,
 .jp .btn-fuchsia
 {
 	font-size: 20px;
@@ -64,6 +66,7 @@ a
 	color: #1179b4;
 	display: inline-block;
 }
+.cn .link,
 .jp .link
 {
 	font-size: 12px;
@@ -75,6 +78,7 @@ a
 	font-weight: bold;
 	display: inline-block;
 }
+.cn .link-arrow-r,
 .jp .link-arrow-r
 {
 	font-size: 12px;
@@ -158,6 +162,10 @@ a
 	line-height: 25px;
 	padding: 0 15px;
 }
+.cn .page-header nav a
+{
+	font-size: 13px;
+}
 .jp .page-header nav a
 {
 	font-size: 9px;
@@ -169,11 +177,11 @@ a
 	background-color: #bb4373;
 }
 /* - language selector */
-.lng-selecter
+.lng-selector
 {
 	margin: 27px 10px 0 0;
 }
-.lng-selecter li a
+.lng-selector li a
 {
 	display: block;
 	color: #777;
@@ -182,21 +190,23 @@ a
 	padding: 0 6px;
 	border-right: 1px solid #777;
 }
-.lng-selecter li:first-child a
+.lng-selector li:first-child a
 {
 	padding-left: 0;
 }
-.lng-selecter li:last-child a
+.lng-selector li:last-child a
 {
 	border-right-width: 0;
 	padding-right: 0;
 }
-.lng-selecter li.active a
+.en .lng-selector-en a,
+.cn .lng-selector-cn a,
+.jp .lng-selector-jp a
 {
 	font-weight: bold;
 	color: #1179b4;
 }
-.lng-selecter li a:hover
+.lng-selector li a:hover
 {
 	text-shadow: 0 1px 1px #ccc;
 }
@@ -233,6 +243,7 @@ a
 	padding: 0 10px;
 	border-right: 1px solid #fff;
 }
+.cn .link-help li a,
 .jp .link-help li a
 {
 	font-size: 12px;
@@ -258,6 +269,7 @@ a
 	font-size: 13px;
 	margin: 18px 20px 0 0;
 }
+.cn .copyright,
 .jp .copyright
 {
 	font-size: 12px;

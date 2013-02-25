@@ -1,9 +1,9 @@
-define(['jquery'], function($) {
+define(['jquery', 'widget/language/main'], function($, language) {
     'use strict';
 
 	return {
 		'init': function(){
-			console.log(document.getElementsByTagName("*").length);
+			language.init();
 		}
 	};
 

@@ -19,8 +19,6 @@ module.exports = function( grunt ) {
       dist:{
         files: [
           {expand: true, flatten: true, src: ['app/*.html', "app/favicon.ico", "app/favicon.png"], dest: 'dist/', filter: 'isFile'},
-          {expand: true, flatten: true, src: ['app/en/*.html'], dest: 'dist/en/', filter: 'isFile'},
-          {expand: true, flatten: true, src: ['app/jp/*.html'], dest: 'dist/jp/', filter: 'isFile'},
           {expand: true, flatten: true, src: ['app/contact/*'], dest: 'dist/contact/', filter: 'isFile'},
           {expand: true, flatten: true, src: ['app/contact/include/*'], dest: 'dist/contact/include/', filter: 'isFile'},
           {expand: true, flatten: true, src: ['app/contact/scripts/*'], dest: 'dist/contact/scripts/', filter: 'isFile'},
@@ -76,9 +74,11 @@ module.exports = function( grunt ) {
             out: "dist/scripts/main.js",
             paths: {
               "jquery": 'vendor/jquery-1.8.3.min',
-              "jquery-ui": 'vendor/jquery-ui-1.10.0.custom.min',
+              "jquery-ui": 'vendor/jquery-ui-1.10.0.custom',
+              "jquery.cookie": "vendor/jquery.cookie",
               "modernizr": "vendor/modernizr.min",
-              "fancybox": "fancybox/source/jquery.fancybox"
+              "fancybox": "fancybox/source/jquery.fancybox",
+              "text": "vendor/text"
             },
             map: {}
           }
@@ -91,9 +91,11 @@ module.exports = function( grunt ) {
             out: "dist/scripts/main.debug.js",
             paths: {
               "jquery": 'vendor/jquery-1.8.3.min',
-              "jquery-ui": 'vendor/jquery-ui-1.10.0.custom.min',
+              "jquery-ui": 'vendor/jquery-ui-1.10.0.custom',
+              "jquery.cookie": "vendor/jquery.cookie",
               "modernizr": "vendor/modernizr.min",
-              "fancybox": "fancybox/source/jquery.fancybox"
+              "fancybox": "fancybox/source/jquery.fancybox",
+              "text": "vendor/text"
             },
             optimize: 'none',
             map: {}
