@@ -1,48 +1,113 @@
 /* - events */
 .events
 {
-	padding: 0 90px 0 136px;
+	padding: 0 0px 0 46px;
 }
 .events ul > li
 {
 	position: relative;
 	border-left: 2px solid #575757;
-	padding-left: 85px;
-	padding-bottom: 70px;
+	padding-bottom: 50px;
+}
+.events ul > li > div
+{
+	padding: 20px 0 30px 85px;
 }
 .events ul > li:last-child
 {
 	border-left-width: 0;
 }
-.events ul > li > strong
+.events ul > li strong.title
 {
 	width: 100px;
 	height: 100px;
 	border-radius: 50px;
 	background-color: #575757;
-	color: #fff;
 	text-align: center;
 	line-height: 100px;
 	font-weight: lighter;
 	position: absolute;
-	top: -35px;
+	top: -15px;
 	left: -50px;
 }
-.events ul > li > strong > span
+.events ul > li strong.title > a,
+.events ul > li strong.title > span
 {
-	font-size: 20px;
 	line-height: 1.4em;
 	display: inline-block;
 	vertical-align: middle;
+	color: #fff;
 }
-.cn .events ul > li > strong > span,
-.jp .events ul > li > strong > span
+.cn .events ul > li strong.title > a,
+.jp .events ul > li strong.title > a,
+.cn .events ul > li strong.title > span,
+.jp .events ul > li strong.title > span
 {
 	font-size: 16px;
 }
-.events ul > li > p
+.events ul > li p.des
 {
 	line-height: 1.8em;
-	font-size: 15px;
-	margin-top: 5px;
+	font-size: 13px;
+	margin-top: 10px;
+	width: 50%;
 }
+.events .btn-fuchsia
+{
+	margin-top: 20px;
+}
+/* - category */
+.events ul > li.events-private h2.title
+{
+	color: #1e1e1e;
+}
+.events ul > li.events-private h2.title > .label
+{
+	color: #fff;
+	background-color: #bbb;
+	padding: 5px 10px;
+	font-size: 15px;
+	border-radius: 5px;
+	position: relative;
+	top: -4px;
+	margin-left: 20px;
+}
+.events ul > li.events-public > div
+{
+	background-color: #fff;
+
+}
+.events ul > li.events-public strong.title
+{
+	background-color: #f60;
+}
+.events ul > li.events-public h2.title
+{
+	color: #f60;
+}
+.events ul > li.events-host strong.title
+{
+	background-color: #bb4373;
+}
+.events ul > li.events-host h2.title
+{
+	color: #bb4373;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

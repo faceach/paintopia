@@ -18,7 +18,7 @@ module.exports = function( grunt ) {
     copy: {
       dist:{
         files: [
-          {expand: true, flatten: true, src: ['app/*.html', "app/favicon.ico", "app/favicon.png"], dest: 'dist/', filter: 'isFile'},
+          {expand: true, flatten: true, src: ["app/favicon.ico", "app/favicon.png"], dest: 'dist/', filter: 'isFile'},
           {expand: true, flatten: true, src: ['app/contact/*'], dest: 'dist/contact/', filter: 'isFile'},
           {expand: true, flatten: true, src: ['app/contact/include/*'], dest: 'dist/contact/include/', filter: 'isFile'},
           {expand: true, flatten: true, src: ['app/contact/scripts/*'], dest: 'dist/contact/scripts/', filter: 'isFile'},
@@ -30,6 +30,24 @@ module.exports = function( grunt ) {
         files: [
           {expand: true, flatten: true, src: ['dist/styles/main.min.css'], dest: 'app/styles/', filter: 'isFile'}
         ]
+      }
+    },
+    "string-replace": {
+      dist: {
+        files: {
+          "dist/index.html": "app/index.html",
+          "dist/about.html": "app/about.html",
+          "dist/contact.html": "app/contact.html",
+          "dist/events.html": "app/events.html",
+          "dist/gallery.html": "app/gallery.html",
+          "dist/merchandise.html": "app/merchandise.html"
+        },
+        options: {
+          replacements: [{
+            pattern: "styles/style.css",
+            replacement: "styles/main.min.css"
+          }]
+        }
       }
     },
     cssmin: {
@@ -107,10 +125,10 @@ module.exports = function( grunt ) {
   grunt.loadNpmTasks('grunt-contrib');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks('grunt-string-replace');
 
   // Default task.
-  grunt.registerTask('default', ['clean:build', 'copy:dist', 'cssmin','requirejs:app', 'requirejs:app-debug', 'imagemin']);
-  grunt.registerTask('css', ['cssmin', 'copy:src']);
+  grunt.registerTask('default', ['clean:build', 'copy:dist','string-replace:dist', 'cssmin','requirejs:app', 'requirejs:app-debug', 'imagemin']);
 
   // Alias the `test` task to run the `mocha` task instead
   //grunt.registerTask('test', 'server:phantom mocha');

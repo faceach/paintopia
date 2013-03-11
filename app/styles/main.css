@@ -39,6 +39,10 @@ a
 	font-size: 25px;
 	color: #1e1e1e;
 }
+.title-des
+{
+	line-height: 1.8em;
+}
 .cn .title,
 .jp .title
 {
@@ -119,6 +123,37 @@ a
 {
 	margin-left: 40px;
 	background-image: url(../images/icon_location.png);
+}
+/* - picture */
+.pic
+{
+	line-height: 0;
+	border: 1px dashed #c0c0c0;
+	border-radius: 8px;
+	position: relative;
+}
+.pic > img
+{
+	border-radius: 8px;
+}
+.pic-shadow
+{
+	position: absolute;
+	width: 326px;
+	height: 13px;
+	z-index: -1;
+	bottom: -11px;
+	left: -23px;
+	background: url(../images/shadow_founder.png) center 0 no-repeat;
+}
+/**/
+.page-main-content
+{
+	padding: 0 25px;
+}
+.page-main-content .title
+{
+	color: #bb4373;
 }
 
 /* + Header */

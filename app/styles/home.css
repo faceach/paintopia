@@ -48,26 +48,22 @@
 	background: url(../images/wood_b.png) left top no-repeat;	
 }
 /* + Home */
-.page-main-content
-{
-	padding: 0 25px;
-}
-.page-main-content .col-w
+.page-home-content .col-w
 {
 	width: 66%;
 }
-.page-main-content .col-n
+.page-home-content .col-n
 {
 	width: 29.5%;
 	margin-left: 40px;
 }
-.page-main-content .title
+.page-home-content .title
 {
 	font-size: 21px;
 	color: #bb4373;
 }
-.cn .page-main-content .title,
-.jp .page-main-content .title
+.cn .page-home-content .title,
+.jp .page-home-content .title
 {
 	font-size: 16px;
 }

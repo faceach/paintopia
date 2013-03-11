@@ -1,0 +1,8 @@
+.bags > li
+{
+	margin-left: 50px;
+}
+.bags > li:first-child
+{
+	margin-left: 0;
+}
