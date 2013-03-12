@@ -1,0 +1,86 @@
+.gallery h2.title
+{
+	color: #1e1e1e;
+}
+.gallery-slide
+{
+	padding: 0 80px;
+}
+.gallery-side-prev,
+.gallery-side-next
+{
+	position: absolute;
+	background-color: #575757;
+	padding: 7px 13px;
+	border-radius: 6px;
+	top: 30%;
+}
+.gallery-side-prev
+{
+	left: 0;
+	padding-left: 5px;
+}
+.gallery-side-next
+{
+	right: 0;
+	padding-right: 5px;
+}
+.gallery-side-prev .caret,
+.gallery-side-next .caret
+{
+	display: block;
+	width: 0;
+	height: 0;
+	line-height: 0;
+	overflow: hidden;
+	border: 8px solid #fff;
+	border-top-color: transparent;
+	border-bottom-color: transparent;
+}
+.gallery-side-prev .caret
+{
+	border-left-color: transparent;
+}
+.gallery-side-next .caret
+{
+	border-right-color: transparent;
+}
+/* + Gallery main */
+.gallery-main
+{
+	z-index: 1;
+	width: 858px;
+	border: 1px dashed #d1d1d1;
+	background-color: #fff;
+	padding-bottom: 6px;
+}
+.gallery-main > a
+{
+	float: left;
+	border: 1px solid #d1d1d1;
+	margin: 6px 0 0 6px;
+	line-height: 0;
+	overflow: hidden;
+	text-align: center;
+	width: 205px;
+	height: 205px;
+}
+.gallery-main > a.gallery-pic-main
+{
+	width: 418px;
+	height: 418px;
+}
+.gallery-main > a > img
+{
+	width: 133.33%;
+	margin-left: -16.66%;
+}
+.gallery-shadow
+{
+	width: 867px;
+	height: 13px;
+	background: url(../images/shadow_gallery.png) center top no-repeat;
+	position: absolute;
+	bottom: -9px;
+	left: 17px;
+}

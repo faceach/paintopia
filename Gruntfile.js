@@ -23,6 +23,7 @@ module.exports = function( grunt ) {
           {expand: true, flatten: true, src: ['app/contact/include/*'], dest: 'dist/contact/include/', filter: 'isFile'},
           {expand: true, flatten: true, src: ['app/contact/scripts/*'], dest: 'dist/contact/scripts/', filter: 'isFile'},
           {expand: true, flatten: true, src: ['app/styles/futurabt-mediumcondensed.otf'], dest: 'dist/styles/', filter: 'isFile'},
+          {expand: true, flatten: true, src: ["app/scripts/fancybox/source/*.gif", "app/scripts/fancybox/source/*.png"], dest: 'dist/styles/', filter: 'isFile'},
           {expand: true, flatten: true, src: ['app/scripts/vendor/require.js'], dest: 'dist/scripts/vendor/', filter: 'isFile'}
         ]
       },
@@ -72,15 +73,11 @@ module.exports = function( grunt ) {
         options: {
           optimizationLevel: 3
         },
-        files: {
-          'dist/images/': 'app/images/**/*'
-        }
-      }
-    },
-    smushit:{
-      destination: {
-          src: 'app/images/**/*',
-          dest: 'dist/images/'
+        files: [
+          {expand: true, flatten: true, src: ["app/images/*"], dest: 'dist/images/', filter: 'isFile'},
+          {expand: true, flatten: true, src: ["app/images/bag/*"], dest: 'dist/images/bag/', filter: 'isFile'},
+          {expand: true, flatten: true, src: ["app/gallery/shanghai20120923/*"], dest: 'dist/gallery/shanghai20120923/', filter: 'isFile'}
+        ]
       }
     },
     requirejs: {
