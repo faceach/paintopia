@@ -2923,7 +2923,8 @@ define("modernizr", function(){});
             'jquery-ui': {
                 deps: ['jquery']
             }
-        }
+        },
+        waitSeconds: 0
     });
 
     require(['require', 'jquery', 'app', 'modernizr'], function(parentRequire, $, app) {
