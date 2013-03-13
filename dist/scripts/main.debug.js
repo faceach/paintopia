@@ -2929,7 +2929,6 @@ define("modernizr", function(){});
 
     require(['require', 'jquery', 'app', 'modernizr'], function(parentRequire, $, app) {
         $(document).ready(function() {
-            console.log(document.getElementsByTagName("*").length);
             //
             app.init();
         });
