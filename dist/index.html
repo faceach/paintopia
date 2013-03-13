@@ -21,6 +21,16 @@
 
     </head>
     <body>
+        <div id="fb-root"></div>
+        <script>
+            (function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
         <header class="page-header">
             <div class="page-width cf">
                 <h1 class="col-l">
@@ -122,73 +132,8 @@
                         </div>
                         <div class="page-main-facebook mt-30">
                             <h2 class="title">LIKE US ON FACEBOOK</h2>
-                            <div class="facebook-like cf mt-15">
-                                <a href="" class="col-l">
-                                    <img src="images/0.png" alt="">
-                                </a>
-                                <div class="col-l ml-8">
-                                    <p class="mt-5"><a href="#" class="facebook-name bold">Shanghaiist</a></p>
-                                    <p class="mt-3">
-                                        <button>Like</button><span class="txt-s ml-5">You like this.</span>
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="facebook-follower mt-10">
-                                <p class="txt-s mt-5">You and 24,735 others like <a href="#" class="facebook-name">shanghaiist</a>.</p>
-                                <ul class="hor mt-10">
-                                    <li>
-                                        <a href="">
-                                            <img src="images/1.png" alt="">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="">
-                                            <img src="images/2.png" alt="">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="">
-                                            <img src="images/3.png" alt="">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="">
-                                            <img src="images/4.png" alt="">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="">
-                                            <img src="images/5.png" alt="">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="">
-                                            <img src="images/6.png" alt="">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="">
-                                            <img src="images/7.png" alt="">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="">
-                                            <img src="images/8.png" alt="">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="">
-                                            <img src="images/9.png" alt="">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="">
-                                            <img src="images/10.png" alt="">
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                            <div class="fb-like-box mt-20" style="background-color: #fff;" data-href="http://www.facebook.com/Paintopiacom" data-width="296" data-height="238" data-show-faces="true" data-stream="false" data-border-color="#eee" data-header="false"></div>
+                       </div>
                     </div>
                 </div>
             </div>
