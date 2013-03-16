@@ -797,16 +797,17 @@ define('widget/language/main',["jquery"
 	, "text!./index.html"],function($, cookie, blurbs, template){
 
 		var LANGUAGE_DEFAULT = 'en';
+		var LANGUAGE_CLASSES = 'en cn jp';
 
 		return {
 			'init': function(){
 				
-				var lng_cookie = $.cookie('lng');
-				var lng = lng_cookie || LANGUAGE_DEFAULT;
-
-				if(lng){
+				function update(lng){
+					if(!lng){
+						lng = LANGUAGE_DEFAULT;
+					}
 					// Set language class for styles
-					$('body').addClass(lng);
+					$('body').removeClass(LANGUAGE_CLASSES).addClass(lng);
 					// Set language text
 					$("[data-blurb]").each(function(i, e){
 						var $this = $(this);
@@ -815,18 +816,18 @@ define('widget/language/main',["jquery"
 							$this.html(blurbs(blurb, lng));
 						}
 					})
-				}
+				};
 				
 				var $template = $(template);
-				$("#hook-language").append($template);
 				$template.on("click", "[data-lng]", function(){
 					var $this = $(this);
 					var toLng = $this.data('lng');
 					$.cookie('lng', toLng);
-					location.reload(true);
+					update(toLng);
 				});
+				$("#hook-language").append($template);
 
-
+				update($.cookie('lng'));
 			}
 		};
 });
