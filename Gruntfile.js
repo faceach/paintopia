@@ -76,7 +76,8 @@ module.exports = function( grunt ) {
         files: [
           {expand: true, flatten: true, src: ["app/images/*"], dest: 'dist/images/', filter: 'isFile'},
           {expand: true, flatten: true, src: ["app/images/bag/*"], dest: 'dist/images/bag/', filter: 'isFile'},
-          {expand: true, flatten: true, src: ["app/gallery/shanghai20120923/*"], dest: 'dist/gallery/shanghai20120923/', filter: 'isFile'}
+          {expand: true, flatten: true, src: ["app/gallery/shanghai20120923/*"], dest: 'dist/gallery/shanghai20120923/', filter: 'isFile'},
+          {expand: true, flatten: true, src: ["app/gallery/tokyo20130224/*"], dest: 'dist/gallery/tokyo20130224/', filter: 'isFile'}
         ]
       }
     },
