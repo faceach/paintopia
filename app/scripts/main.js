@@ -7,6 +7,7 @@
             "jquery-ui": 'vendor/jquery-ui-1.10.0.custom',
             "jquery.cookie": "vendor/jquery.cookie",
             "modernizr": "vendor/modernizr.min",
+            "flickr": "vendor/jquery.flickr-1.0",
             "fancybox": "fancybox/source/jquery.fancybox",
             "text": "vendor/text"
         },
