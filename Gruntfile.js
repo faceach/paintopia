@@ -2,6 +2,15 @@ module.exports = function( grunt ) {
   'use strict';
 
   var EMPTY = "empty:";
+  var REQUIREJS_PATH = {
+              "jquery": 'vendor/jquery-1.8.3.min',
+              "jquery-ui": 'vendor/jquery-ui-1.10.0.custom',
+              "jquery.cookie": "vendor/jquery.cookie",
+              "modernizr": "vendor/modernizr.min",
+              "flickr": "vendor/jquery.flickr-1.0",
+              "fancybox": "fancybox/source/jquery.fancybox",
+              "text": "vendor/text"
+            };
   //
   // Grunt configuration:
   //
@@ -76,6 +85,7 @@ module.exports = function( grunt ) {
         files: [
           {expand: true, flatten: true, src: ["app/images/*"], dest: 'dist/images/', filter: 'isFile'},
           {expand: true, flatten: true, src: ["app/images/bag/*"], dest: 'dist/images/bag/', filter: 'isFile'},
+          {expand: true, flatten: true, src: ["app/images/slideshow/*"], dest: 'dist/images/slideshow/', filter: 'isFile'},
           {expand: true, flatten: true, src: ["app/gallery/shanghai20120923/*"], dest: 'dist/gallery/shanghai20120923/', filter: 'isFile'},
           {expand: true, flatten: true, src: ["app/gallery/tokyo20130224/*"], dest: 'dist/gallery/tokyo20130224/', filter: 'isFile'}
         ]
@@ -88,14 +98,7 @@ module.exports = function( grunt ) {
             include: ["main"],
             exclude: [],
             out: "dist/scripts/main.js",
-            paths: {
-              "jquery": 'vendor/jquery-1.8.3.min',
-              "jquery-ui": 'vendor/jquery-ui-1.10.0.custom',
-              "jquery.cookie": "vendor/jquery.cookie",
-              "modernizr": "vendor/modernizr.min",
-              "fancybox": "fancybox/source/jquery.fancybox",
-              "text": "vendor/text"
-            },
+            paths: REQUIREJS_PATH,
             map: {}
           }
       },
@@ -105,14 +108,7 @@ module.exports = function( grunt ) {
             include: ["main"],
             exclude: [],
             out: "dist/scripts/main.debug.js",
-            paths: {
-              "jquery": 'vendor/jquery-1.8.3.min',
-              "jquery-ui": 'vendor/jquery-ui-1.10.0.custom',
-              "jquery.cookie": "vendor/jquery.cookie",
-              "modernizr": "vendor/modernizr.min",
-              "fancybox": "fancybox/source/jquery.fancybox",
-              "text": "vendor/text"
-            },
+            paths: REQUIREJS_PATH,
             optimize: 'none',
             map: {}
           }

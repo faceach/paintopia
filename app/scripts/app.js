@@ -2,8 +2,9 @@ define(['jquery'
 	, 'widget/language/main'
 	, 'widget/showdetail/main'
 	, 'widget/citypicker/main'
+	, 'widget/slideshow/main'
 	, 'flickr']
-	, function($, language,showDetail, cityPicker) {
+	, function($, language,showDetail, cityPicker, slideshow) {
     'use strict';
 
 	return {
@@ -14,7 +15,10 @@ define(['jquery'
 			showDetail.init();
 			// City Picker
 			cityPicker.init();
-			//
+			// Slide show
+			slideshow.init();
+			// Flickr get Photo
+			/*
 			$("body").flickr({
 				api_key: '9e47810f1a48239068172be44b8a4431',              // [string]    required, see http://www.flickr.com/services/api/misc.api_keys.html
 				type: 'photoset',                 // [string]    allowed values: 'photoset', 'search', default: 'flickr.photos.getRecent'
@@ -35,6 +39,7 @@ define(['jquery'
 				api_callback: '?',          // [string]    optional, custom callback in flickr JSON-P response
 				callback: null              // [function]  optional, callback function applied to entire <ul>
 			});
+			*/
 		}
 	};
 

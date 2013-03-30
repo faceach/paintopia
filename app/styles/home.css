@@ -4,23 +4,60 @@
 	max-width: 950px;
 	height: 392px;
 	border: 3px solid #fff;
-	background: url(../images/banner.png) left -3px no-repeat;
 }
-.stage > p
+
+.stage-slideshow
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	overflow: hidden;
+}
+.stage-slideshow > p
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	-webkit-transition: all .8s ease-out;
+	-moz-transition: all .8s ease-out;
+	-o-transition: all .8s ease-out;
+	transition: all .8s ease-out;
+}
+.stage-slideshow > p.active
+{
+	opacity: 1;
+	z-index: 1;
+}
+
+.stage > .stage-des
+{
+	margin-top: 125px;
+	position: relative;
+	z-index: 1;
+}
+.stage > .stage-des > p
 {
 	color: #291b1a;
 	font-size: 45px;
 	line-height: 1em;
 	width: 40%;
-	margin: 125px 0 0 65px;
+	margin: 0 0 0 65px;
+	text-shadow: 1px 1px 3px #fff;
 }
-.cn .stage > p,
-.jp .stage > p
+.cn .stage > .stage-des > p,
+.jp .stage > .stage-des > p
 {
 	font-size: 28px;
 	line-height: 1.3em;
 }
-.stage > a
+.stage > .stage-des > a
 {
 	margin: 36px 0 0 65px;
 }
