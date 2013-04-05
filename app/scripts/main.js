@@ -8,6 +8,7 @@
             "jquery.cookie": "vendor/jquery.cookie",
             "modernizr": "vendor/modernizr.min",
             "flickr": "vendor/jquery.flickr-1.0",
+            "dot": "vendor/dot/1.0.0/main",
             "fancybox": "fancybox/source/jquery.fancybox",
             "text": "vendor/text"
         },

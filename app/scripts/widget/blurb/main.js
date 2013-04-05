@@ -5,32 +5,32 @@ define(function(){
 	var blurbs = {
 
 		'0001':{
-			'en':'Home',
+			'en':'HOME',
 			'cn':'主页',
 			'jp':'ホーム'
 		},
 		'0002':{
-			'en':'About',
+			'en':'ABOUT',
 			'cn':'关于我们',
 			'jp':'ペイントピアについて'
 		},
 		'0003':{
-			'en':'Events',
+			'en':'EVENTS',
 			'cn':'活动',
 			'jp':'イベント'
 		},
 		'0004':{
-			'en':'Gallery',
+			'en':'GALLERY',
 			'cn':'展示',
 			'jp':'ギャラリー'
 		},
 		'0005':{
-			'en':'Merchandise',
+			'en':'MERCHANDISE',
 			'cn':'商品',
 			'jp':'ペイントピアグッズ'
 		},
 		'0006':{
-			'en':'Contact us',
+			'en':'CONTACT US',
 			'cn':'联系我们',
 			'jp':'お問い合せ'
 		},
