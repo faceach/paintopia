@@ -1,0 +1,25 @@
+<div class="txtalign-c">
+    <div class="gallery-slide inlineblock pos-rel">
+        <h2 class="title">{{=it.title}}</h2>
+        <div class="sign">
+            <span class="sign-date">{{=it.time}}</span>
+            <span class="sign-location">{{=it.location}}</span>
+        </div>
+        <a href="#" class="gallery-side-prev"><span class="caret"></span></a>
+        <a href="#" class="gallery-side-next"><span class="caret"></span></a>
+    </div>
+</div>
+<div class="gallery-main cf mt-30 align-c pos-rel">
+    {{~it.images :value:index}}
+        {{? index === 0 || index === 1 }}
+            <a href="{{=value}}" data-fancybox-group="{{=it.time}}" class="fancybox gallery-pic-main">
+                <img src="{{=value}}" alt="" width="418">
+            </a>
+        {{??}}
+            <a href="{{=value}}" data-fancybox-group="{{=it.time}}" class="fancybox">
+                <img src="{{=value}}" alt="" width="205">
+            </a>
+        {{?}}
+    {{~}}
+</div>
+<div class="gallery-shadow"></div>

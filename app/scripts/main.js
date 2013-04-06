@@ -1,5 +1,11 @@
 (function(){
     'use strict';
+
+    if (!String.prototype.trim) {
+        String.prototype.trim = function() {
+            return this.replace(/^\s+|\s+$/g,'');
+        }
+    }
     
     require.config({
         paths: {
@@ -8,7 +14,7 @@
             "jquery.cookie": "vendor/jquery.cookie",
             "modernizr": "vendor/modernizr.min",
             "flickr": "vendor/jquery.flickr-1.0",
-            "dot": "vendor/dot/1.0.0/main",
+            "doT": "vendor/dot/1.0.0/main",
             "fancybox": "fancybox/source/jquery.fancybox",
             "text": "vendor/text"
         },

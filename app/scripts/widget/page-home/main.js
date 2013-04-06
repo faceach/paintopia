@@ -1,5 +1,5 @@
-define(["jquery", "dot", "../data-provider/main", "../page-events/main", "../page-gallery/main", "text!./index.html"], 
-	function ($, dot, dataProvider, pageEvents, pageGallery, template) {
+define(["jquery", "doT", "../data-provider/main", "text!./index.html"], 
+	function ($, doT, dataProvider, template) {
 
 
 	return {
@@ -10,8 +10,22 @@ define(["jquery", "dot", "../data-provider/main", "../page-events/main", "../pag
 				return;
 			}
 
+			function renderUpComingEvents(data){
+				var events = [];
+
+				for(var i = 0, lens = data.length; i < lens; i++){
+					if(data[i].format !== "gallery"){
+						events.push(data[i]);
+					}
+				}
+
+		        var doTemp = doT.template(template),
+					$html = $(doTemp(events));
+				$container.html($html);
+			};
+
 			dataProvider().then(function(data){
-				console.log(data);
+				renderUpComingEvents(data);
 			});
 
 		}

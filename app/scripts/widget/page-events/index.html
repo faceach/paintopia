@@ -1,0 +1,22 @@
+<ul>
+    {{~it :value:index}}
+        <li class="events-public">
+            <div>
+                <strong class="title"><span>{{=value.time}}</span></strong>
+                <h2 class="title" data-blurb="0047">{{=value.title}}</h2>
+                <div class="sign">
+                    <span class="sign-date">{{=value.time}}</span>
+                    <span class="sign-location">{{=value.location}}</span>
+                </div>
+                <p class="des" data-blurb="0048">{{=value.content}}</p>
+                <a href="contact.html" class="btn-fuchsia" data-blurb="0046">Sign up for this event</a>
+            </div>
+        </li>
+    {{~}}
+    <li class="events-host">
+        <div>
+            <strong class="title"><a href="contact.html">Host your event</a></strong>
+            <h2 class="title">Click here to host your own PAINTOPIA event!</h2>
+        </div>
+    </li>                            
+</ul>
