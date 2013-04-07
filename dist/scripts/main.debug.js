@@ -100,32 +100,32 @@ define('widget/blurb/main',[],function(){
 	var blurbs = {
 
 		'0001':{
-			'en':'Home',
+			'en':'HOME',
 			'cn':'主页',
 			'jp':'ホーム'
 		},
 		'0002':{
-			'en':'About',
+			'en':'ABOUT',
 			'cn':'关于我们',
 			'jp':'ペイントピアについて'
 		},
 		'0003':{
-			'en':'Events',
+			'en':'EVENTS',
 			'cn':'活动',
 			'jp':'イベント'
 		},
 		'0004':{
-			'en':'Gallery',
+			'en':'GALLERY',
 			'cn':'展示',
 			'jp':'ギャラリー'
 		},
 		'0005':{
-			'en':'Merchandise',
+			'en':'MERCHANDISE',
 			'cn':'商品',
 			'jp':'ペイントピアグッズ'
 		},
 		'0006':{
-			'en':'Contact us',
+			'en':'CONTACT US',
 			'cn':'联系我们',
 			'jp':'お問い合せ'
 		},
@@ -789,7 +789,7 @@ define('text',['module'], function (module) {
     }
     return text;
 });
-define('text!widget/language/index.html',[],function () { return '<ul class="lng-selector hor col-r">\n    <li class="lng-selector-en">\n        <a class="hand" data-lng="en">English</a>\n    </li>\n    <li class="lng-selector-cn">\n        <a class="hand" data-lng="cn">中文</a>\n    </li>\n    <li class="lng-selector-jp">\n        <a class="hand" data-lng="jp">日本語</a>\n    </li>\n</ul>';});
+define('text!widget/language/index.html',[],function () { return '<ul class="lng-selector hor col-r">\r\n    <li class="lng-selector-en">\r\n        <a class="hand" data-lng="en">English</a>\r\n    </li>\r\n    <li class="lng-selector-cn">\r\n        <a class="hand" data-lng="cn">中文</a>\r\n    </li>\r\n    <li class="lng-selector-jp">\r\n        <a class="hand" data-lng="jp">日本語</a>\r\n    </li>\r\n</ul>';});
 
 define('widget/language/main',["jquery"
 	, "jquery.cookie"
@@ -2844,38 +2844,6 @@ define('widget/showdetail/main',['jquery', 'fancybox'], function($){
     };
 	
 });
-define('widget/citypicker/main',["jquery"], function($) {
-
-	return {
-		'init': function() {
-
-			$cityPicker = $('.city').find("li > a");
-			var cities = "";
-			$cityPicker.each(function() {
-				var $this = $(this);
-				var target = $this.attr("href");
-				cities += (cities ? ',' + target : target);
-			});
-			var $cities = $(cities);
-			$cityPicker.on("click", function(e) {
-				var $this = $(this);
-				var target = $this.attr("href");
-				var $target = $(target);
-				if ($target.length <= 0) {
-					return;
-				}
-				// city picker change
-				$cityPicker.parent("li").removeClass("active");
-				$this.parent("li").addClass("active");
-				// city content change
-				$cities.hide();
-				$target.show();
-				e.preventDefault();
-			});
-
-		}
-	};
-});
 define('widget/slideshow/main',["jquery"], function ($) {
 
 	var ACTIVE_CSSCLASS = "active";
@@ -2902,124 +2870,444 @@ define('widget/slideshow/main',["jquery"], function ($) {
 		}
 	}
 });
-/*
- * jQuery Flickr - jQuery plug-in
- * Version 1.0, Released 2008.04.17
- *
- * Copyright (c) 2008 Daniel MacDonald (www.projectatomic.com)
- * Dual licensed GPL http://www.gnu.org/licenses/gpl.html 
- * and MIT http://www.opensource.org/licenses/mit-license.php
- */
-(function($) {
-$.fn.flickr = function(o){
-var s = {
-    api_key: null,              // [string]    required, see http://www.flickr.com/services/api/misc.api_keys.html
-    type: null,                 // [string]    allowed values: 'photoset', 'search', default: 'flickr.photos.getRecent'
-    photoset_id: null,          // [string]    required, for type=='photoset'  
-    text: null,			            // [string]    for type=='search' free text search
-    user_id: null,              // [string]    for type=='search' search by user id
-    group_id: null,             // [string]    for type=='search' search by group id
-    tags: null,                 // [string]    for type=='search' comma separated list
-    tag_mode: 'any',            // [string]    for type=='search' allowed values: 'any' (OR), 'all' (AND)
-    sort: 'date-posted-asc',    // [string]    for type=='search' allowed values: 'date-posted-asc', 'date-posted-desc', 'date-taken-asc', 'date-taken-desc', 'interestingness-desc', 'interestingness-asc', 'relevance'
-    thumb_size: 's',            // [string]    allowed values: 's' (75x75), 't' (100x?), 'm' (240x?)
-    size: null,                 // [string]    allowed values: 'm' (240x?), 'b' (1024x?), 'o' (original), default: (500x?)
-    per_page: 100,              // [integer]   allowed values: max of 500
-    page: 1,     	              // [integer]   see paging notes
-    attr: '',                   // [string]    optional, attributes applied to thumbnail <a> tag
-    api_url: null,              // [string]    optional, custom url that returns flickr JSON or JSON-P 'photos' or 'photoset'
-    params: '',                 // [string]    optional, custom arguments, see http://www.flickr.com/services/api/flickr.photos.search.html
-    api_callback: '?',          // [string]    optional, custom callback in flickr JSON-P response
-    callback: null              // [function]  optional, callback function applied to entire <ul>
+// doT.js
+// 2011, Laura Doktorova, https://github.com/olado/doT
+// Licensed under the MIT license.
 
-    // PAGING NOTES: jQuery Flickr plug-in does not provide paging functionality, but does provide hooks for a custom paging routine
-    // within the <ul> created by the plug-in, there are two hidden <input> tags, 
-    // input:eq(0): current page, input:eq(1): total number of pages, input:eq(2): images per page, input:eq(3): total number of images
-    
-    // SEARCH NOTES: when setting type to 'search' at least one search parameter  must also be passed text, user_id, group_id, or tags
-    
-    // SIZE NOTES: photos must allow viewing original size for size 'o' to function, if not, default size is shown
-  };
-  if(o) $.extend(s, o);
-  return this.each(function(){
-    // create unordered list to contain flickr images
-		var list = $('<ul>').appendTo(this);
-    var url = $.flickr.format(s);
-		$.getJSON(url, function(r){
-      if (r.stat != "ok"){
-        for (i in r){
-	        $('<li>').text(i+': '+ r[i]).appendTo(list);
-        };
-      } else {
-        if (s.type == 'photoset') r.photos = r.photoset;
-        // add hooks to access paging data
-        list.append('<input type="hidden" value="'+r.photos.page+'" />');
-        list.append('<input type="hidden" value="'+r.photos.pages+'" />');
-        list.append('<input type="hidden" value="'+r.photos.perpage+'" />');
-        list.append('<input type="hidden" value="'+r.photos.total+'" />');
-        for (var i=0; i<r.photos.photo.length; i++){
-          var photo = r.photos.photo[i];
-          // format thumbnail url
-          var t = 'http://farm'+photo['farm']+'.static.flickr.com/'+photo['server']+'/'+photo['id']+'_'+photo['secret']+'_'+s.thumb_size+'.jpg';
-          //format image url
-          var h = 'http://farm'+photo['farm']+'.static.flickr.com/'+photo['server']+'/'+photo['id']+'_';
-          switch (s.size){
-            case 'm':
-              h += photo['secret'] + '_m.jpg';
-              break;
-            case 'b':
-              h += photo['secret'] + '_b.jpg';
-              break;
-            case 'o':
-              if (photo['originalsecret'] && photo['originalformat']) {
-                h += photo['originalsecret'] + '_o.' + photo['originalformat'];
-                break;
-              };
-            default:
-              h += photo['secret'] + '.jpg';
-          };
-          list.append('<li><a href="'+h+'" '+s.attr+' title="'+photo['title']+'"><img src="'+t+'" alt="'+photo['title']+'" /></a></li>');
-        };
-        if (s.callback) s.callback(list);
-      };
+(function() {
+	
+
+	var doT = {
+		version: '1.0.0',
+		templateSettings: {
+			evaluate:    /\{\{([\s\S]+?\}?)\}\}/g,
+			interpolate: /\{\{=([\s\S]+?)\}\}/g,
+			encode:      /\{\{!([\s\S]+?)\}\}/g,
+			use:         /\{\{#([\s\S]+?)\}\}/g,
+			useParams:   /(^|[^\w$])def(?:\.|\[[\'\"])([\w$\.]+)(?:[\'\"]\])?\s*\:\s*([\w$\.]+|\"[^\"]+\"|\'[^\']+\'|\{[^\}]+\})/g,
+			define:      /\{\{##\s*([\w\.$]+)\s*(\:|=)([\s\S]+?)#\}\}/g,
+			defineParams:/^\s*([\w$]+):([\s\S]+)/,
+			conditional: /\{\{\?(\?)?\s*([\s\S]*?)\s*\}\}/g,
+			iterate:     /\{\{~\s*(?:\}\}|([\s\S]+?)\s*\:\s*([\w$]+)\s*(?:\:\s*([\w$]+))?\s*\}\})/g,
+			varname:	'it',
+			strip:		true,
+			append:		true,
+			selfcontained: false
+		},
+		template: undefined, //fn, compile template
+		compile:  undefined  //fn, for express
+	};
+
+	if (typeof module !== 'undefined' && module.exports) {
+		module.exports = doT;
+	} else if (typeof define === 'function' && define.amd) {
+		define('doT',[],function(){return doT;});
+	} else {
+		(function(){ return this || (0,eval)('this'); }()).doT = doT;
+	}
+
+	function encodeHTMLSource() {
+		var encodeHTMLRules = { "&": "&#38;", "<": "&#60;", ">": "&#62;", '"': '&#34;', "'": '&#39;', "/": '&#47;' },
+			matchHTML = /&(?!#?\w+;)|<|>|"|'|\//g;
+		return function() {
+			return this ? this.replace(matchHTML, function(m) {return encodeHTMLRules[m] || m;}) : this;
+		};
+	}
+	String.prototype.encodeHTML = encodeHTMLSource();
+
+	var startend = {
+		append: { start: "'+(",      end: ")+'",      endencode: "||'').toString().encodeHTML()+'" },
+		split:  { start: "';out+=(", end: ");out+='", endencode: "||'').toString().encodeHTML();out+='"}
+	}, skip = /$^/;
+
+	function resolveDefs(c, block, def) {
+		return ((typeof block === 'string') ? block : block.toString())
+		.replace(c.define || skip, function(m, code, assign, value) {
+			if (code.indexOf('def.') === 0) {
+				code = code.substring(4);
+			}
+			if (!(code in def)) {
+				if (assign === ':') {
+					if (c.defineParams) value.replace(c.defineParams, function(m, param, v) {
+						def[code] = {arg: param, text: v};
+					});
+					if (!(code in def)) def[code]= value;
+				} else {
+					new Function("def", "def['"+code+"']=" + value)(def);
+				}
+			}
+			return '';
+		})
+		.replace(c.use || skip, function(m, code) {
+			if (c.useParams) code = code.replace(c.useParams, function(m, s, d, param) {
+				if (def[d] && def[d].arg && param) {
+					var rw = (d+":"+param).replace(/'|\\/g, '_');
+					def.__exp = def.__exp || {};
+					def.__exp[rw] = def[d].text.replace(new RegExp("(^|[^\\w$])" + def[d].arg + "([^\\w$])", "g"), "$1" + param + "$2");
+					return s + "def.__exp['"+rw+"']";
+				}
+			});
+			var v = new Function("def", "return " + code)(def);
+			return v ? resolveDefs(c, v, def) : v;
 		});
-  });
-};
-// static function to format the flickr API url according to the plug-in settings 
-$.flickr = {
-    format: function(s){
-        if (s.url) return s.url;
-        var url = 'http://api.flickr.com/services/rest/?format=json&jsoncallback='+s.api_callback+'&api_key='+s.api_key;
-        switch (s.type){
-            case 'photoset':
-                url += '&method=flickr.photosets.getPhotos&photoset_id=' + s.photoset_id;
-                break;
-            case 'search':
-                url += '&method=flickr.photos.search&sort=' + s.sort;
-                if (s.user_id) url += '&user_id=' + s.user_id;
-                if (s.group_id) url += '&group_id=' + s.group_id;
-                if (s.tags) url += '&tags=' + s.tags;
-                if (s.tag_mode) url += '&tag_mode=' + s.tag_mode;
-                if (s.text) url += '&text=' + s.text;
-                break;
-            default:
-                url += '&method=flickr.photos.getRecent';
-        };
-        if (s.size == 'o') url += '&extras=original_format';
-        url += '&per_page=' + s.per_page + '&page=' + s.page + s.params;
-        return url;
-    }
-};
-})(jQuery);
-define("flickr", function(){});
+	}
 
+	function unescape(code) {
+		return code.replace(/\\('|\\)/g, "$1").replace(/[\r\t\n]/g, ' ');
+	}
+
+	doT.template = function(tmpl, c, def) {
+		c = c || doT.templateSettings;
+		var cse = c.append ? startend.append : startend.split, needhtmlencode, sid = 0, indv,
+			str  = (c.use || c.define) ? resolveDefs(c, tmpl, def || {}) : tmpl;
+
+		str = ("var out='" + (c.strip ? str.replace(/(^|\r|\n)\t* +| +\t*(\r|\n|$)/g,' ')
+					.replace(/\r|\n|\t|\/\*[\s\S]*?\*\//g,''): str)
+			.replace(/'|\\/g, '\\$&')
+			.replace(c.interpolate || skip, function(m, code) {
+				return cse.start + unescape(code) + cse.end;
+			})
+			.replace(c.encode || skip, function(m, code) {
+				needhtmlencode = true;
+				return cse.start + unescape(code) + cse.endencode;
+			})
+			.replace(c.conditional || skip, function(m, elsecase, code) {
+				return elsecase ?
+					(code ? "';}else if(" + unescape(code) + "){out+='" : "';}else{out+='") :
+					(code ? "';if(" + unescape(code) + "){out+='" : "';}out+='");
+			})
+			.replace(c.iterate || skip, function(m, iterate, vname, iname) {
+				if (!iterate) return "';} } out+='";
+				sid+=1; indv=iname || "i"+sid; iterate=unescape(iterate);
+				return "';var arr"+sid+"="+iterate+";if(arr"+sid+"){var "+vname+","+indv+"=-1,l"+sid+"=arr"+sid+".length-1;while("+indv+"<l"+sid+"){"
+					+vname+"=arr"+sid+"["+indv+"+=1];out+='";
+			})
+			.replace(c.evaluate || skip, function(m, code) {
+				return "';" + unescape(code) + "out+='";
+			})
+			+ "';return out;")
+			.replace(/\n/g, '\\n').replace(/\t/g, '\\t').replace(/\r/g, '\\r')
+			.replace(/(\s|;|\}|^|\{)out\+='';/g, '$1').replace(/\+''/g, '')
+			.replace(/(\s|;|\}|^|\{)out\+=''\+/g,'$1out+=');
+
+		if (needhtmlencode && c.selfcontained) {
+			str = "String.prototype.encodeHTML=(" + encodeHTMLSource.toString() + "());" + str;
+		}
+		try {
+			return new Function(c.varname, str);
+		} catch (e) {
+			if (typeof console !== 'undefined') console.log("Could not create a template function: " + str);
+			throw e;
+		}
+	};
+
+	doT.compile = function(tmpl, def) {
+		return doT.template(tmpl, null, def);
+	};
+}());
+define('widget/data-provider/main',["jquery"], function ($) {
+    
+
+    function getCategory(cssClasses){
+        var arrClass = cssClasses.split(" ");
+        for(var i = 0, lens = arrClass.length; i < lens; i++){
+            if(arrClass[i].indexOf("category-") === 0){
+                return arrClass[i].substring(9);
+            }
+        }
+        return "";
+    };
+    function getMeta($lists, metaKey){
+        if($lists.length <= 0){
+            return;
+        }
+        var meta = "";
+        $lists.each(function(i, e){
+            var $this = $(this);
+            var $metaKey = $this.find("span.post-meta-key");
+            var keyName = $metaKey.text().toLowerCase();
+            if(keyName.indexOf(metaKey) >= 0){
+                meta = $this.text().substr($metaKey.text().length).trim();
+                return;
+            }
+        });
+        return meta;
+    };
+    function getImages($lists){
+        if($lists.lenght <= 0){
+            return;
+        }
+        var imageList = [];
+        $lists.each(function(i, e){
+            var $this = $(this);
+            imageList.push($this.attr("href"));
+        });
+        return imageList;
+    };
+    function dataHandler(html){
+        var data = [];
+
+        var $data = $(html);
+
+        $data.find("> div").each(function(i, e){
+            var $this = $(this);
+            var o = {};
+            // pick up data from DOM            
+            var title = $this.find(".entry-title > a").text();
+            var category = getCategory($this.attr("class"));
+
+            // create data
+            o.title = title;
+            o.category = category;
+            o.time = getMeta($this.find(".entry-content > ul.post-meta > li"), "time");
+            o.location = getMeta($this.find(".entry-content > ul.post-meta > li"), "location");
+            // Gallery
+            if($this.hasClass("format-gallery")){
+                o.format = "gallery";
+                o.images = getImages($this.find(".entry-content > p > a"));
+            }
+            else{
+                o.format = "standard";
+                o.content = $this.find(".entry-content > p").text();
+            }
+            data.push(o);
+        });
+
+        return data;
+    };
+
+	return function(){
+		var dfd = $.Deferred();
+        $.ajax({
+            url: "/data.php#wp-data",
+            cache: false
+        }).done(function( html ) {
+            var data = dataHandler(html);
+            dfd.resolve(data);
+        }).fail(function(){
+        	dfd.reject()
+        });
+        return dfd.promise();
+	}
+});
+define('text!widget/page-home/index.html',[],function () { return '<ul>\r\n    {{~it :value:index}}\r\n        {{? index < 4 }}\r\n            <li>\r\n                <p>{{=value.title}}</p>\r\n                <div class="sign">\r\n                    <span class="sign-date">{{=value.time}}</span>\r\n                    <span class="sign-location">{{=value.location}}</span>\r\n                </div>\r\n            </li>\r\n        {{?}}\r\n    {{~}}\r\n</ul>\r\n';});
+
+define('widget/page-home/main',["jquery", "doT", "../data-provider/main", "text!./index.html"], 
+	function ($, doT, dataProvider, template) {
+
+
+	return {
+		"init": function(){
+			
+			var $container = $("[data-action='upcomingevents']");
+			if($container.length <= 0){
+				return;
+			}
+
+			function renderUpComingEvents(data){
+				var events = [];
+
+				for(var i = 0, lens = data.length; i < lens; i++){
+					if(data[i].format !== "gallery"){
+						events.push(data[i]);
+					}
+				}
+
+		        var doTemp = doT.template(template),
+					$html = $(doTemp(events));
+				$container.html($html);
+			};
+
+			dataProvider().then(function(data){
+				renderUpComingEvents(data);
+			});
+
+		}
+	}
+});
+define('text!widget/category/index.html',[],function () { return '<ul class="hor">\r\n    {{~it :value:index}}\r\n        {{? index === 0 }}\r\n\t\t    <li class="active">\r\n\t\t        <a href="#this" data-category="{{=value}}">{{=value}}</a>\r\n\t\t    </li>\r\n\t\t{{??}}\r\n\t\t    <li>\r\n\t\t        <a href="#this" data-category="{{=value}}">{{=value}}</a>\r\n\t\t    </li>\r\n\t    {{?}}\r\n    {{~}}\r\n</ul>\r\n';});
+
+define('widget/category/main',["jquery", "doT", "text!./index.html"], 
+	function ($, doT, template) {
+
+
+	function inArray(arr, e)  
+	{  
+		for(i=0;i<arr.length && arr[i]!=e;i++);  
+		return !(i==arr.length);  
+	};
+	function getCategories(data){
+		var categories = [];
+		for(var i = 0, lens = data.length; i < lens; i++){
+			if(!inArray(categories, data[i].category)){
+				categories.push(data[i].category);
+			}
+		}
+		return categories;
+	};
+
+	return {
+		"init": function(data){
+			
+			var categories = getCategories(data);
+
+			var $container = $("[data-action='categories']");
+			if($container.length > 0){
+		        var doTemp = doT.template(template),
+					$html = $(doTemp(categories));
+
+				$container.append($html);
+			}
+
+			return categories[0];
+
+		}
+	}
+});
+define('text!widget/page-events/index.html',[],function () { return '<ul>\r\n    {{~it :value:index}}\r\n        <li class="events-public">\r\n            <div>\r\n                <strong class="title"><span>{{=value.time}}</span></strong>\r\n                <h2 class="title" data-blurb="0047">{{=value.title}}</h2>\r\n                <div class="sign">\r\n                    <span class="sign-date">{{=value.time}}</span>\r\n                    <span class="sign-location">{{=value.location}}</span>\r\n                </div>\r\n                <p class="des" data-blurb="0048">{{=value.content}}</p>\r\n                <a href="contact.html" class="btn-fuchsia" data-blurb="0046">Sign up for this event</a>\r\n            </div>\r\n        </li>\r\n    {{~}}\r\n    <li class="events-host">\r\n        <div>\r\n            <strong class="title"><a href="contact.html">Host your event</a></strong>\r\n            <h2 class="title">Click here to host your own PAINTOPIA event!</h2>\r\n        </div>\r\n    </li>                            \r\n</ul>\r\n';});
+
+define('widget/page-events/main',["jquery", "doT", "../data-provider/main", "../category/main", "text!./index.html"], 
+	function ($, doT, dataProvider, category, template) {
+
+
+
+	return {
+		"init": function(){
+			
+			var $container = $("[data-action='showeventsbycategory']");
+			if($container.length <= 0){
+				return;
+			}
+
+			function renderEventsByCategory(data, category){
+				var events = [];
+
+				for(var i = 0, lens = data.length; i < lens; i++){
+					if(data[i].category === category && data[i].format !== "gallery"){
+						events.push(data[i]);
+					}
+				}
+
+		        var doTemp = doT.template(template),
+					$html = $(doTemp(events));
+				$container.html($html);
+			};
+
+			dataProvider().then(function(data){
+				var categoryDefault = category.init(data);
+				renderEventsByCategory(data, categoryDefault);
+
+				var $container = $("[data-action='categories']");
+				$container.on("click", "li > a", function(e){
+					var $this = $(this);
+					var _category = $this.data("category");
+
+					$container.find("li").removeClass("active");
+					$this.parent("li").addClass("active");
+
+					renderEventsByCategory(data, _category);
+					e.preventDefault();
+				});
+			});
+
+		}
+	}
+});
+define('text!widget/page-gallery/index.html',[],function () { return '<div class="txtalign-c">\r\n    <div class="gallery-slide inlineblock pos-rel">\r\n        <h2 class="title">{{=it.title}}</h2>\r\n        <div class="sign">\r\n            <span class="sign-date">{{=it.time}}</span>\r\n            <span class="sign-location">{{=it.location}}</span>\r\n        </div>\r\n        <a href="#" class="gallery-side-prev"><span class="caret"></span></a>\r\n        <a href="#" class="gallery-side-next"><span class="caret"></span></a>\r\n    </div>\r\n</div>\r\n<div class="gallery-main cf mt-30 align-c pos-rel">\r\n    {{~it.images :value:index}}\r\n        {{? index === 0 || index === 1 }}\r\n            <a href="{{=value}}" data-fancybox-group="{{=it.time}}" class="fancybox gallery-pic-main">\r\n                <img src="{{=value}}" alt="" width="418">\r\n            </a>\r\n        {{??}}\r\n            <a href="{{=value}}" data-fancybox-group="{{=it.time}}" class="fancybox">\r\n                <img src="{{=value}}" alt="" width="205">\r\n            </a>\r\n        {{?}}\r\n    {{~}}\r\n</div>\r\n<div class="gallery-shadow"></div>\r\n';});
+
+define('widget/page-gallery/main',["jquery", "doT", "../data-provider/main", "../category/main", "text!./index.html"], 
+	function ($, doT, dataProvider, category, template) {
+
+
+
+	return {
+		"init": function(){
+			
+			var $container = $("[data-action='showgallerybycategory']");
+			if($container.length <= 0){
+				return;
+			}
+
+			function renderGallerysByCategory(data, category){
+				var gallery = [];
+				var index = 0;
+
+				for(var i = 0, lens = data.length; i < lens; i++){
+					if(data[i].category === category && data[i].format === "gallery"){
+						gallery.push(data[i]);
+					}
+				}
+		        var doTemp = doT.template(template),
+					$html = $(doTemp(gallery[index]));
+
+
+				$container.on("click", "a.gallery-side-prev", function(e){
+					e.preventDefault();
+					if(index <= 0){
+						return;
+					}
+					index--;
+					$html = $(doTemp(gallery[index]));
+					$container.html($html);
+					if(index <= 0){
+						$container.find("a.gallery-side-prev").css("visibility", "hidden");
+					}
+					if(index < gallery.length - 1){
+						$container.find("a.gallery-side-next").css("visibility", "visible");
+					}
+				}).on("click", "a.gallery-side-next", function(e){
+					e.preventDefault();
+					if(index >= gallery.length){
+						return;
+					}
+					index++;
+					$html = $(doTemp(gallery[index]));
+					$container.html($html);
+					if(index >= gallery.length -1){
+						$container.find("a.gallery-side-next").css("visibility", "hidden");
+					}
+					if(index > 0){
+						$container.find("a.gallery-side-prev").css("visibility", "visible");
+					}
+				});
+
+				$container.html($html);
+
+				$html.find("a.gallery-side-prev").css("visibility", "hidden");
+				if(gallery.length < 2){
+					$html.find("a.gallery-side-next").css("visibility", "hidden");
+				}
+			};
+
+			dataProvider().then(function(data){
+				var categoryDefault = category.init(data);
+				renderGallerysByCategory(data, categoryDefault);
+
+				var $container = $("[data-action='categories']");
+				$container.on("click", "li > a", function(e){
+					e.preventDefault();
+					var $this = $(this);
+					var _category = $this.data("category");
+
+					$container.find("li").removeClass("active");
+					$this.parent("li").addClass("active");
+
+					renderGallerysByCategory(data, _category);
+				});
+			});
+
+		}
+	}
+});
 define('app',['jquery'
 	, 'widget/language/main'
 	, 'widget/showdetail/main'
-	, 'widget/citypicker/main'
 	, 'widget/slideshow/main'
-	, 'flickr']
-	, function($, language,showDetail, cityPicker, slideshow) {
+	, 'widget/page-home/main'
+	, 'widget/page-events/main'
+	, 'widget/page-gallery/main'
+	]
+	, function($, language,showDetail, slideshow, pageHome, pageEvents, pageGallery) {
     
 
 	return {
@@ -3028,33 +3316,14 @@ define('app',['jquery'
 			language.init();
 			// Fancybox
 			showDetail.init();
-			// City Picker
-			cityPicker.init();
 			// Slide show
 			slideshow.init();
-			// Flickr get Photo
-			/*
-			$("body").flickr({
-				api_key: '9e47810f1a48239068172be44b8a4431',              // [string]    required, see http://www.flickr.com/services/api/misc.api_keys.html
-				type: 'photoset',                 // [string]    allowed values: 'photoset', 'search', default: 'flickr.photos.getRecent'
-				photoset_id: '72157633096730668',          // [string]    required, for type=='photoset'  
-				text: null,			            // [string]    for type=='search' free text search
-				user_id: null,              // [string]    for type=='search' search by user id
-				group_id: null,             // [string]    for type=='search' search by group id
-				tags: null,                 // [string]    for type=='search' comma separated list
-				tag_mode: 'any',            // [string]    for type=='search' allowed values: 'any' (OR), 'all' (AND)
-				sort: 'date-posted-asc',    // [string]    for type=='search' allowed values: 'date-posted-asc', 'date-posted-desc', 'date-taken-asc', 'date-taken-desc', 'interestingness-desc', 'interestingness-asc', 'relevance'
-				thumb_size: 's',            // [string]    allowed values: 's' (75x75), 't' (100x?), 'm' (240x?)
-				size: null,                 // [string]    allowed values: 'm' (240x?), 'b' (1024x?), 'o' (original), default: (500x?)
-				per_page: 16,              // [integer]   allowed values: max of 500
-				page: 1,     	              // [integer]   see paging notes
-				attr: '',                   // [string]    optional, attributes applied to thumbnail <a> tag
-				api_url: null,              // [string]    optional, custom url that returns flickr JSON or JSON-P 'photos' or 'photoset'
-				params: '',                 // [string]    optional, custom arguments, see http://www.flickr.com/services/api/flickr.photos.search.html
-				api_callback: '?',          // [string]    optional, custom callback in flickr JSON-P response
-				callback: null              // [function]  optional, callback function applied to entire <ul>
-			});
-			*/
+			// Nav
+			pageHome.init();
+			// Events
+			pageEvents.init();
+			// Gallery
+			pageGallery.init();
 		}
 	};
 
@@ -3068,6 +3337,12 @@ define("modernizr", function(){});
 
 (function(){
     
+
+    if (!String.prototype.trim) {
+        String.prototype.trim = function() {
+            return this.replace(/^\s+|\s+$/g,'');
+        }
+    }
     
     require.config({
         paths: {
@@ -3076,6 +3351,7 @@ define("modernizr", function(){});
             "jquery.cookie": "vendor/jquery.cookie",
             "modernizr": "vendor/modernizr.min",
             "flickr": "vendor/jquery.flickr-1.0",
+            "doT": "vendor/dot/1.0.0/main",
             "fancybox": "fancybox/source/jquery.fancybox",
             "text": "vendor/text"
         },
