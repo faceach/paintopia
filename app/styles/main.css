@@ -27,6 +27,13 @@ a
 @media screen and (max-width: 800px) {
 
 }
+.loading
+{
+	display: inline-block;
+	width: 100%;
+	height: 32px;
+	background: url(../images/loading.gif) center top no-repeat;
+}
 
 /* + Common Style */
 .futura

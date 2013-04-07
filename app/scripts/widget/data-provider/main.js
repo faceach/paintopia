@@ -72,7 +72,7 @@ define(["jquery"], function ($) {
 	return function(){
 		var dfd = $.Deferred();
         $.ajax({
-            url: "/data.php#wp-data",
+            url: "../../data.php#wp-data",
             cache: false
         }).done(function( html ) {
             var data = dataHandler(html);
