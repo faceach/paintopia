@@ -789,7 +789,7 @@ define('text',['module'], function (module) {
     }
     return text;
 });
-define('text!widget/language/index.html',[],function () { return '<ul class="lng-selector hor col-r">\r\n    <li class="lng-selector-en">\r\n        <a class="hand" data-lng="en">English</a>\r\n    </li>\r\n    <li class="lng-selector-cn">\r\n        <a class="hand" data-lng="cn">中文</a>\r\n    </li>\r\n    <li class="lng-selector-jp">\r\n        <a class="hand" data-lng="jp">日本語</a>\r\n    </li>\r\n</ul>';});
+define('text!widget/language/index.html',[],function () { return '<ul class="lng-selector hor col-r">\n    <li class="lng-selector-en">\n        <a class="hand" data-lng="en">English</a>\n    </li>\n    <li class="lng-selector-cn">\n        <a class="hand" data-lng="cn">中文</a>\n    </li>\n    <li class="lng-selector-jp">\n        <a class="hand" data-lng="jp">日本語</a>\n    </li>\n</ul>';});
 
 define('widget/language/main',["jquery"
 	, "jquery.cookie"
@@ -3079,7 +3079,7 @@ define('widget/data-provider/main',["jquery"], function ($) {
 	return function(){
 		var dfd = $.Deferred();
         $.ajax({
-            url: "/data.php#wp-data",
+            url: "../../data.php#wp-data",
             cache: false
         }).done(function( html ) {
             var data = dataHandler(html);
@@ -3090,7 +3090,7 @@ define('widget/data-provider/main',["jquery"], function ($) {
         return dfd.promise();
 	}
 });
-define('text!widget/page-home/index.html',[],function () { return '<ul>\r\n    {{~it :value:index}}\r\n        {{? index < 4 }}\r\n            <li>\r\n                <p>{{=value.title}}</p>\r\n                <div class="sign">\r\n                    <span class="sign-date">{{=value.time}}</span>\r\n                    <span class="sign-location">{{=value.location}}</span>\r\n                </div>\r\n            </li>\r\n        {{?}}\r\n    {{~}}\r\n</ul>\r\n';});
+define('text!widget/page-home/index.html',[],function () { return '<ul>\n    {{~it :value:index}}\n        {{? index < 4 }}\n            <li>\n                <p>{{=value.title}}</p>\n                <div class="sign">\n                    <span class="sign-date">{{=value.time}}</span>\n                    <span class="sign-location">{{=value.location}}</span>\n                </div>\n            </li>\n        {{?}}\n    {{~}}\n</ul>\n';});
 
 define('widget/page-home/main',["jquery", "doT", "../data-provider/main", "text!./index.html"], 
 	function ($, doT, dataProvider, template) {
@@ -3125,7 +3125,7 @@ define('widget/page-home/main',["jquery", "doT", "../data-provider/main", "text!
 		}
 	}
 });
-define('text!widget/category/index.html',[],function () { return '<ul class="hor">\r\n    {{~it :value:index}}\r\n        {{? index === 0 }}\r\n\t\t    <li class="active">\r\n\t\t        <a href="#this" data-category="{{=value}}">{{=value}}</a>\r\n\t\t    </li>\r\n\t\t{{??}}\r\n\t\t    <li>\r\n\t\t        <a href="#this" data-category="{{=value}}">{{=value}}</a>\r\n\t\t    </li>\r\n\t    {{?}}\r\n    {{~}}\r\n</ul>\r\n';});
+define('text!widget/category/index.html',[],function () { return '<ul class="hor">\n    {{~it :value:index}}\n        {{? index === 0 }}\n\t\t    <li class="active">\n\t\t        <a href="#this" data-category="{{=value}}">{{=value}}</a>\n\t\t    </li>\n\t\t{{??}}\n\t\t    <li>\n\t\t        <a href="#this" data-category="{{=value}}">{{=value}}</a>\n\t\t    </li>\n\t    {{?}}\n    {{~}}\n</ul>\n';});
 
 define('widget/category/main',["jquery", "doT", "text!./index.html"], 
 	function ($, doT, template) {
@@ -3164,7 +3164,7 @@ define('widget/category/main',["jquery", "doT", "text!./index.html"],
 		}
 	}
 });
-define('text!widget/page-events/index.html',[],function () { return '<ul>\r\n    {{~it :value:index}}\r\n        <li class="events-public">\r\n            <div>\r\n                <strong class="title"><span>{{=value.time}}</span></strong>\r\n                <h2 class="title" data-blurb="0047">{{=value.title}}</h2>\r\n                <div class="sign">\r\n                    <span class="sign-date">{{=value.time}}</span>\r\n                    <span class="sign-location">{{=value.location}}</span>\r\n                </div>\r\n                <p class="des" data-blurb="0048">{{=value.content}}</p>\r\n                <a href="contact.html" class="btn-fuchsia" data-blurb="0046">Sign up for this event</a>\r\n            </div>\r\n        </li>\r\n    {{~}}\r\n    <li class="events-host">\r\n        <div>\r\n            <strong class="title"><a href="contact.html">Host your event</a></strong>\r\n            <h2 class="title">Click here to host your own PAINTOPIA event!</h2>\r\n        </div>\r\n    </li>                            \r\n</ul>\r\n';});
+define('text!widget/page-events/index.html',[],function () { return '<ul>\n    {{~it :value:index}}\n        <li class="events-public">\n            <div>\n                <strong class="title"><span>{{=value.time}}</span></strong>\n                <h2 class="title" data-blurb="0047">{{=value.title}}</h2>\n                <div class="sign">\n                    <span class="sign-date">{{=value.time}}</span>\n                    <span class="sign-location">{{=value.location}}</span>\n                </div>\n                <p class="des" data-blurb="0048">{{=value.content}}</p>\n                <a href="contact.html" class="btn-fuchsia" data-blurb="0046">Sign up for this event</a>\n            </div>\n        </li>\n    {{~}}\n    <li class="events-host">\n        <div>\n            <strong class="title"><a href="contact.html">Host your event</a></strong>\n            <h2 class="title">Click here to host your own PAINTOPIA event!</h2>\n        </div>\n    </li>                            \n</ul>\n';});
 
 define('widget/page-events/main',["jquery", "doT", "../data-provider/main", "../category/main", "text!./index.html"], 
 	function ($, doT, dataProvider, category, template) {
@@ -3213,7 +3213,7 @@ define('widget/page-events/main',["jquery", "doT", "../data-provider/main", "../
 		}
 	}
 });
-define('text!widget/page-gallery/index.html',[],function () { return '<div class="txtalign-c">\r\n    <div class="gallery-slide inlineblock pos-rel">\r\n        <h2 class="title">{{=it.title}}</h2>\r\n        <div class="sign">\r\n            <span class="sign-date">{{=it.time}}</span>\r\n            <span class="sign-location">{{=it.location}}</span>\r\n        </div>\r\n        <a href="#" class="gallery-side-prev"><span class="caret"></span></a>\r\n        <a href="#" class="gallery-side-next"><span class="caret"></span></a>\r\n    </div>\r\n</div>\r\n<div class="gallery-main cf mt-30 align-c pos-rel">\r\n    {{~it.images :value:index}}\r\n        {{? index === 0 || index === 1 }}\r\n            <a href="{{=value}}" data-fancybox-group="{{=it.time}}" class="fancybox gallery-pic-main">\r\n                <img src="{{=value}}" alt="" width="418">\r\n            </a>\r\n        {{??}}\r\n            <a href="{{=value}}" data-fancybox-group="{{=it.time}}" class="fancybox">\r\n                <img src="{{=value}}" alt="" width="205">\r\n            </a>\r\n        {{?}}\r\n    {{~}}\r\n</div>\r\n<div class="gallery-shadow"></div>\r\n';});
+define('text!widget/page-gallery/index.html',[],function () { return '<div class="txtalign-c">\n    <div class="gallery-slide inlineblock pos-rel">\n        <h2 class="title">{{=it.title}}</h2>\n        <div class="sign">\n            <span class="sign-date">{{=it.time}}</span>\n            <span class="sign-location">{{=it.location}}</span>\n        </div>\n        <a href="#" class="gallery-side-prev"><span class="caret"></span></a>\n        <a href="#" class="gallery-side-next"><span class="caret"></span></a>\n    </div>\n</div>\n<div class="gallery-main cf mt-30 align-c pos-rel">\n    {{~it.images :value:index}}\n        {{? index === 0 || index === 1 }}\n            <a href="{{=value}}" data-fancybox-group="{{=it.time}}" class="fancybox gallery-pic-main">\n                <img src="{{=value}}" alt="" width="418">\n            </a>\n        {{??}}\n            <a href="{{=value}}" data-fancybox-group="{{=it.time}}" class="fancybox">\n                <img src="{{=value}}" alt="" width="205">\n            </a>\n        {{?}}\n    {{~}}\n</div>\n<div class="gallery-shadow"></div>\n';});
 
 define('widget/page-gallery/main',["jquery", "doT", "../data-provider/main", "../category/main", "text!./index.html"], 
 	function ($, doT, dataProvider, category, template) {
