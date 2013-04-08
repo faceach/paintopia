@@ -30,6 +30,7 @@ module.exports = function( grunt ) {
         files: [
           {expand: true, flatten: true, src: ["app/favicon.ico", "app/favicon.png"], dest: 'dist/', filter: 'isFile'},
           {expand: true, flatten: true, src: ['app/contact/*'], dest: 'dist/contact/', filter: 'isFile'},
+          {expand: true, flatten: true, src: ['app/images/*.gif'], dest: 'dist/images/', filter: 'isFile'},
           {expand: true, flatten: true, src: ['app/contact/include/*'], dest: 'dist/contact/include/', filter: 'isFile'},
           {expand: true, flatten: true, src: ['app/contact/scripts/*'], dest: 'dist/contact/scripts/', filter: 'isFile'},
           {expand: true, flatten: true, src: ['app/styles/futurabt-mediumcondensed.otf'], dest: 'dist/styles/', filter: 'isFile'},

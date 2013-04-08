@@ -73,7 +73,8 @@ define(["jquery"], function ($) {
 		var dfd = $.Deferred();
         $.ajax({
             url: "../../data.php#wp-data",
-            cache: false
+            cache: false,
+            dataType: "html"
         }).done(function( html ) {
             var data = dataHandler(html);
             dfd.resolve(data);
