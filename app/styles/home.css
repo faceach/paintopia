@@ -38,7 +38,7 @@
 
 .stage > .stage-des
 {
-	margin-top: 125px;
+	margin-top: 100px;
 	position: relative;
 	z-index: 1;
 }
@@ -48,8 +48,11 @@
 	font-size: 45px;
 	line-height: 1em;
 	width: 40%;
-	margin: 0 0 0 65px;
+	margin: 0 0 0 45px;
 	text-shadow: 1px 1px 3px #fff;
+	background: rgba(255, 255, 255, .4);
+	padding: 10px 20px;
+	border-radius: 10px;
 }
 .cn .stage > .stage-des > p,
 .jp .stage > .stage-des > p
